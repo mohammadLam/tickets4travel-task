@@ -1,0 +1,25 @@
+{
+  "name": "tickets4travel-task",
+  "version": "1.0.0",
+  "description": "this is a task from tickets4travel.com",
+  "main": "server.js",
+  "repository": "https://www.github.com/mohammadLam/tickets4travel-task",
+  "author": "Muhammad Lam",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "http-errors": "^2.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.3.6",
+    "yup": "^0.32.11"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  }
+}
