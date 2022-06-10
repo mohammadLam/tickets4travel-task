@@ -3,6 +3,7 @@ const { config } = require('dotenv')
 const cookieParser = require('cookie-parser')
 const connect = require('./connection/connectdb')
 const createHttpError = require('http-errors')
+const cors = require('cors')
 
 const app = express()
 
@@ -15,6 +16,12 @@ config({
 })
 
 // middlewares
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+  })
+)
 app.use(express.json())
 app.use(cookieParser())
 app.use('/api/auth', authRouter)
@@ -44,8 +51,8 @@ app.use((err, req, res, next) => {
   }
 })
 
-app.listen(3000, async () => {
-  console.log('Server started on port 3000')
+app.listen(process.env.PORT, async () => {
+  console.log('Server started on port ' + process.env.PORT)
   try {
     await connect()
   } catch (err) {

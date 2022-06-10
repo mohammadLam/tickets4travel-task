@@ -72,7 +72,8 @@ const authController = {
           maxAge: 1000 * 60 * 60 * 24 * 7
         })
         .json({
-          message: 'Login success'
+          name: user.name,
+          email: user.email
         })
     } catch (error) {
       return next(error)
